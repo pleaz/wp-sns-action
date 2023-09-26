@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== SNS Action ===
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: https://google.com/
 Tags: comments, spam
