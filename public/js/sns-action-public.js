@@ -61,19 +61,19 @@ const submitLeadForm = (getForm, api, stat, type, source) => {
     formData.append('source', source);
     formData.set('subscription', subscriptionValue);
 
-    if(UTMDataParsed) {
+    if (UTMDataParsed) {
         formData.append('utm', UTMData);
     }
 
     const countrySelect = document.getElementById('countrySelect');
     let selectedCountryCode = null;
 
-    if(type === 'enquiry') {
-    //	selectedCountryCode = Array.from(countrySelect.options).find(el => el.selected).value;
+    if (type === 'enquiry') {
+    	selectedCountryCode = Array.from(countrySelect.options).find(el => el.selected).value;
     }
 
-    //getForm.reset();
-    //stat && statistics(stat);
+    getForm.reset();
+    stat && statistics(stat);
 
     // success messages / close form, show lightbox
     if (type === 'region') {
@@ -81,9 +81,8 @@ const submitLeadForm = (getForm, api, stat, type, source) => {
         document.getElementById('success-form').style.display = 'block';
     }
     if (type === 'enquiry') {
-        //document.getElementsByClassName('enquiry_success')[0].style.display = 'block';
-
-        //setDefaultCountryCode(selectedCountryCode);
+        document.getElementsByClassName('enquiry_success')[0].style.display = 'block';
+        setDefaultCountryCode(selectedCountryCode);
     }
     if (type === 'voucher') {
         document.getElementsByClassName('voucher-success')[0].classList.add("open");
