@@ -26,8 +26,8 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (! defined('WPINC')) {
+    die;
 }
 
 /**
@@ -35,34 +35,41 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SNS_ACTION_VERSION', '1.0.0' );
+define('SNS_ACTION_VERSION', '1.0.0');
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-sns-action-activator.php
  */
-function activate_sns_action() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sns-action-activator.php';
-	Sns_Action_Activator::activate();
+function activate_sns_action()
+{
+    require_once plugin_dir_path(__FILE__) . 'includes/class-sns-action-activator.php';
+    Sns_Action_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-sns-action-deactivator.php
  */
-function deactivate_sns_action() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-sns-action-deactivator.php';
-	Sns_Action_Deactivator::deactivate();
+function deactivate_sns_action()
+{
+    require_once plugin_dir_path(__FILE__) . 'includes/class-sns-action-deactivator.php';
+    Sns_Action_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_sns_action' );
-register_deactivation_hook( __FILE__, 'deactivate_sns_action' );
+register_activation_hook(__FILE__, 'activate_sns_action');
+register_deactivation_hook(__FILE__, 'deactivate_sns_action');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-sns-action.php';
+require plugin_dir_path(__FILE__) . 'includes/class-sns-action.php';
+
+/**
+ * Libs
+ */
+require plugin_dir_path(__FILE__) . 'vendor/autoload.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +80,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-sns-action.php';
  *
  * @since    1.0.0
  */
-function run_sns_action() {
-
-	$plugin = new Sns_Action();
-	$plugin->run();
-
+function run_sns_action()
+{
+    $plugin = new Sns_Action();
+    $plugin->run();
 }
 run_sns_action();
