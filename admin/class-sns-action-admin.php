@@ -148,7 +148,7 @@ class Sns_Action_Admin
         $awsAccount = get_option('snsaction_aws_account');
         $prefix = get_option('snsaction_prefix');
 
-        $snsClient = new Aws\SNS\SnsClient([
+        $snsClient = new Aws\Sns\SnsClient([
             'credentials' => [
                 'key' => $awsKey,
                 'secret' => $awsSecret,
@@ -183,8 +183,7 @@ class Sns_Action_Admin
         ];
 
         $postData = $_POST;
-        $eventName = $prefix . '_submit_enquiry';
-        $topicArn = 'arn:aws:sns:' . $awsRegion . ':' . $awsAccount . ':' . $eventName;
+        $topicArn = 'arn:aws:sns:' . $awsRegion . ':' . $awsAccount . ':' . $prefix . '_submit_enquiry';
 
         $message = [
             'contact' => [

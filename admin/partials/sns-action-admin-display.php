@@ -31,19 +31,19 @@
                         <?php do_settings_sections( 'snsaction-settings' ); ?>
                         <div class="form-group">
                             <label for="snsaction_aws_key">AWS KEY:</label>
-                            <input type="text" class="form-control" id="snsaction_aws_key" name="snsaction_aws_key" value="<?php echo get_option( 'snsaction_aws_key' ); ?>">
+                            <input type="text" class="form-control" id="snsaction_aws_key" name="snsaction_aws_key" value="<?php echo get_option( 'snsaction_aws_key' ); ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="snsaction_aws_secret">AWS SECRET:</label>
-                            <input type="password" class="form-control" id="snsaction_aws_secret" name="snsaction_aws_secret">
+                            <input type="password" class="form-control" id="snsaction_aws_secret" name="snsaction_aws_secret" placeholder="Enter Secret" required>
                         </div>
                         <div class="form-group">
                             <label for="snsaction_aws_region">AWS REGION:</label>
-                            <input type="text" class="form-control" id="snsaction_aws_region" name="snsaction_aws_region" value="<?php echo get_option( 'snsaction_aws_region' ); ?>">
+                            <input type="text" class="form-control" id="snsaction_aws_region" name="snsaction_aws_region" value="<?php echo get_option( 'snsaction_aws_region' ); ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="snsaction_aws_account">AWS ACCOUNT:</label>
-                            <input type="text" class="form-control" id="snsaction_aws_account" name="snsaction_aws_account" value="<?php echo get_option( 'snsaction_aws_account' ); ?>">
+                            <input type="text" class="form-control" id="snsaction_aws_account" name="snsaction_aws_account" value="<?php echo get_option( 'snsaction_aws_account' ); ?>" required>
                         </div>
                         <div class="form-group">
 
